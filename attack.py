@@ -1,3 +1,6 @@
+from scapy.all import *
+
+
 def attack(req):
     if 'secret.html' not in str(req):
         return
