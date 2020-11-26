@@ -1,12 +1,12 @@
 from scapy.all import *
 
-data = '''HTTP/1.1 200 OK
-Server: nginx/1.14.0 (Ubuntu)
-Content-Type: text/html
-ETag: W/\"5fb04145-4a\"
-Connection: keep-alive
-Accept-Ranges: bytes
-attacked by 2017011313
+data = '''HTTP/1.1 200 OK\r
+Server: nginx/1.14.0 (Ubuntu)\r
+Content-Type: text/html\r
+\r\n
+<html>
+<p>attack by 2017011313</p>
+</html>
 '''
 
 
